@@ -2,13 +2,21 @@ $white: #EEEEEE;
 //$white: #DFDFDF;
 $black: #272822;
 $gray: #8E927E;
+
 $prebg: #E6E6E6;
-$accent1: #38C5C5;
+
+$teal: #38C5C5;
+$red: #971b24;
+
+$accent1: $teal;
+
+$primary-color: $teal;
+
 $font1: 'Lato', sans-serif;
 $font2: 'Oswald', sans-serif;
 $font3: 'Ubuntu Mono', 'Inconsolata', monospace;
 
-@mixin transition{
+@mixin transition {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;

@@ -15,10 +15,11 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"><h1>{{ article.title }}</h1></a>
                         <time class="post-time" datetime="{{ article.date.isoformat() }}" pubdate>
                             {{ article.locale_date }}
                         </time>
-                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"><h1>{{ article.title }}</h1></a>
+                        <span class="mmdtext"> &bull; <a href="{{ SITEURL }}/{{ article.date|strftime('%Y/%m') }}/{{ article.slug }}.txt" title="Raw Markdown for {{ article.title }}">[mmd]</a></span>
                     </header>
                     <section class="post-content">
                         {{ article.summary }}

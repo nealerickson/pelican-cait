@@ -34,16 +34,27 @@
                 <meta property="og:url" content="{{ SITEURL }}" />
                 <meta property="og:description" content="{{ SITENAME }}" />
                 {% if OPEN_GRAPH_IMAGE %}
-                    <meta property="og:image" content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
+                <meta property="og:image" content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
                 {% endif %}
             {% endif %}
         {% endif %}
         {% block stylesheets %}
+        
+        <link href='//fonts.googleapis.com/css?family=Lato|Oswald' rel='stylesheet' type='text/css'>
+        
+        <!--
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css">
-        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
+
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/github.css">
+        -->
+        
+        {% assets filters="cssmin", output="css/style.min.css", "css/normalize.css", "css/font-awesome.min.css", "css/main.css", "css/blog.css", "css/github.css" %}
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+        {% endassets %}
+
         {% endblock stylesheets %}
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
@@ -62,6 +73,8 @@
             {% block content %}
             {% endblock content %}
         </div>
+
+        {% include "footer.html" %}
 
         {% include "ga.html" %}
         <script src="{{ SITEURL }}/theme/js/main.js"></script>

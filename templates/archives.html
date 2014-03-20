@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ SITENAME }} - Archives
+{% endblock title %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/github.css">
+{% endblock stylesheets %}
+
+{% block content %}
+{% include "sidebar.html" %}
+
+<div id="post-container">
+	<ol id="post-list">
+	    <li>
+		    <article class="post-entry">
+				<header class="entry-header">
+			        <h1>Archives</h1>
+			    </header>
+
+				<dl>
+				{% for article in dates %}
+				    <dt>{{ article.date.strftime('%Y-%m-%d') }}</dt>
+				    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+				{% endfor %}
+				</dl>
+			</article>
+		</li>
+	</ol>
+</div>
+{% endblock %}

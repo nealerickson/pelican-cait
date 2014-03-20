@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ SITENAME }} - Tags
+{% endblock title %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/github.css">
+{% endblock stylesheets %}
+
+{% block content %}
+{% include "sidebar.html" %}
+
+<div id="post-container">
+	<ol id="post-list">
+	    <li>
+		    <article class="post-entry">
+				<header class="entry-header">
+			        <h1>Tags</h1>
+			    </header>
+
+				<dl>
+				{%- for tag, articles in tags|sort %}
+			        <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+			    {% endfor %}
+				</dl>
+			</article>
+		</li>
+	</ol>
+</div>
+{% endblock %}

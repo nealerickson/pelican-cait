@@ -6,7 +6,19 @@ body{
     font-family: $font1;
 }
 
-#sidebar{
+#post-container sup a {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    color: #777;
+    background-color: #e3e3e3;
+    border-radius: 50%;
+    padding: 0.2em 0.5em 0.2em;
+    text-decoration: none;
+}
+
+#sidebar {
     background: url('../img/stressed_linen/stressed_linen.png') repeat;
     position: fixed;
     left: 0;
@@ -18,15 +30,15 @@ body{
     padding-left: 8px;
     padding-right: 8px;
     color: $white;
-    a{
+    a {
         color: $white;
         text-decoration: none;
     }
 }
 
-#site-title{
+#site-title {
     font-family: $font2;
-    font-size: 2em;
+    font-size: 1.2em;
     @include transition;
 
     &:hover{
@@ -34,7 +46,7 @@ body{
     }
 }
 
-#site-desc{
+#site-desc {
     font-size: 1.3em;
     padding: 0 6px;
 }
@@ -71,35 +83,37 @@ body{
 }
 
 
-#post-list{
+#post-list {
     list-style: none;
 }
 
-.post-entry{
+.post-entry {
     margin: 3em 0;
 }
 
-.entry-header{
+.entry-header {
     font-family: $font2;
     font-variant: bold;
-    a{
+    a {
         color: $black;
         text-decoration: none;
     }
-    a:hover{
+    a:hover {
         color: $accent1;
         text-decoration: none;
     }
-    time{
+    time {
         color: $gray;
     }
-    h1{
+    h1 {
         margin: 0.5em 0;
+    }
+    .mmdtext {
+        display: inline-block;
     }
 }
 
-
-.post-content{
+.post-content {
     a{
         color: $accent1;
     }
@@ -167,7 +181,7 @@ body{
         padding: 0;
     }
 
-    #nav-links{
+    #nav-links {
         text-align: center;
         padding: 0;
         font-size: 1.8em;

@@ -3,6 +3,17 @@ body {
   background-color: #eeeeee;
   font-family: "Lato", sans-serif; }
 
+#post-container sup a {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  color: #777;
+  background-color: #e3e3e3;
+  border-radius: 50%;
+  padding: 0.2em 0.5em 0.2em;
+  text-decoration: none; }
+
 #sidebar {
   background: url("../img/stressed_linen/stressed_linen.png") repeat;
   position: fixed;
@@ -21,7 +32,7 @@ body {
 
 #site-title {
   font-family: "Oswald", sans-serif;
-  font-size: 2em;
+  font-size: 1.2em;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -82,6 +93,8 @@ body {
     color: #8e927e; }
   .entry-header h1 {
     margin: 0.5em 0; }
+  .entry-header .mmdtext {
+    display: inline-block; }
 
 .post-content a {
   color: #38c5c5; }
