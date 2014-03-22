@@ -1,19 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}
-{{ SITENAME }} - Archives
+Archives - {{ SITENAME }}
 {% endblock title %}
-
-{% block stylesheets %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/github.css">
-{% endblock stylesheets %}
 
 {% block content %}
 {% include "sidebar.html" %}
 
-<div id="post-container">
+<div id="post-container" class="archives">
 	<ol id="post-list">
 	    <li>
 		    <article class="post-entry">
@@ -21,12 +15,17 @@
 			        <h1>Archives</h1>
 			    </header>
 
-				<dl>
-				{% for article in dates %}
-				    <dt>{{ article.date.strftime('%Y-%m-%d') }}</dt>
-				    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+		    	{% for year, date_year in dates|groupby( 'date.year' ) %}
+					<h3>{{ year }}</h3>
+					{% for month, articles in date_year|groupby( 'date.month' ) %}
+						<h4>{{ articles[ 0 ].date.strftime( '%B' ) }}</h4>
+						<dl>
+						{% for article in articles %}
+							<dt><a href="{{ article.url }}">{{ article.title }}</a></dt>
+						{% endfor %}
+						</dl>
+					{% endfor %}
 				{% endfor %}
-				</dl>
 			</article>
 		</li>
 	</ol>

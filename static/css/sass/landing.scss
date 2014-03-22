@@ -18,7 +18,7 @@ body{
 }
 
 #intro-header{
-    font-family: $font2;
+    font-family: $secondary-font;
     text-align: center;
     h1{
         font-size: 3.5em;
@@ -46,7 +46,7 @@ body{
 }
 
 #nav-links{
-    font-family: $font2;
+    font-family: $secondary-font;
     font-size: 1.8em;
     a{
         margin: 0 6px;

@@ -13,11 +13,27 @@ button,
 input,
 select,
 textarea {
-  color: #222; }
+  color: #272822; }
 
 body {
-  font-size: 1em;
-  line-height: 1.4; }
+  font-size: 1.08em;
+  line-height: 1.25; }
+
+h1, h2, h3, h4, h5 {
+  clear: both;
+  line-height: 1.25; }
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  letter-spacing: 0.04em; }
+
+h2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: 0.04em; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -39,7 +55,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #a8a1a2;
   margin: 1em 0;
   padding: 0; }
 
@@ -77,21 +93,23 @@ textarea {
    ========================================================================== */
 #site-info {
   margin-top: 1.5em;
-  font-size: 0.7em;
+  margin-left: 23%;
+  font-size: 0.9em;
   text-align: center;
-  color: #38c5c5; }
+  max-width: 800px;
+  color: #676b6b; }
   #site-info a {
-    color: #eeeeee; }
+    color: #971b24; }
 
 .side-shadow {
-  -webkit-box-shadow: 3px 0px 8px 0px #8e927e;
-  -moz-box-shadow: 3px 0px 8px 0px #8e927e;
-  box-shadow: 3px 0px 8px 0px #8e927e; }
+  -webkit-box-shadow: 3px 0px 8px 0px #a8a1a2;
+  -moz-box-shadow: 3px 0px 8px 0px #a8a1a2;
+  box-shadow: 3px 0px 8px 0px #a8a1a2; }
 
 .angle-shadow {
-  -webkit-box-shadow: 6px 6px 8px 3px #8e927e;
-  -moz-box-shadow: 6px 6px 8px 3px #8e927e;
-  box-shadow: 6px 6px 8px 3px #8e927e; }
+  -webkit-box-shadow: 6px 6px 8px 3px #a8a1a2;
+  -moz-box-shadow: 6px 6px 8px 3px #a8a1a2;
+  box-shadow: 6px 6px 8px 3px #a8a1a2; }
 
 /* ==========================================================================
    Helper classes

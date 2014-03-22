@@ -1,2 +1,7 @@
 {% extends "index.html" %}
 {% block title %}{{ SITENAME }} - {{ category }}{% endblock %}
+{% block content_title %}
+<div class="page-title">
+	<h2>Posts in <span>"{{ category }}" category</span></h2>
+</div>
+{% endblock %}

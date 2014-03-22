@@ -1,28 +1,36 @@
 {% extends "base.html" %}
 
-{% block stylesheets %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/github.css">
-{% endblock stylesheets %}
-
 {% block content %}
     {% include "sidebar.html" %}
 
     <div id="post-container">
+
+        {% block content_title %}{% endblock %}
+
         <ol id="post-list">
             {% for article in articles_page.object_list %}
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"><h1>{{ article.title }}</h1></a>
+                        {% if article.link %}
+                        <h2><a href="{{ article.link }}" rel="bookmark" title="External Link">{{ article.title }}</a></h2>
+                        {% else %}
+                        <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
+                        {% endif %}
                         <time class="post-time" datetime="{{ article.date.isoformat() }}" pubdate>
-                            {{ article.locale_date }}
+                            {{ article.date|strftime('%B, %d %Y') }}
                         </time>
-                        <span class="mmdtext"> &bull; <a href="{{ SITEURL }}/{{ article.date|strftime('%Y/%m') }}/{{ article.slug }}.txt" title="Raw Markdown for {{ article.title }}">[mmd]</a></span>
+                        &bull;
+                        <a class="permalink" href="{{ SITEURL }}/{{ article.slug }}" title="Permalink for {{ article.title|striptags }}">
+                        <span class="symbol">∞</span>
+                        </a>
+                        {#
+                        <span class="mmdtext"> &bull; <a href="{{ SITEURL }}/{{ article.slug }}.txt" title="Raw Markdown for {{ article.title|striptags }}">[mmd]</a></span>
+                        #}
+                        
                     </header>
                     <section class="post-content">
-                        {{ article.summary }}
+                        {{ article.content }}
                     </section>
                 </article>
             </li>

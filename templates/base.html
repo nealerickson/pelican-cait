@@ -9,6 +9,9 @@
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+
+        <link rel="shortcut icon" href="{{ SITEURL }}/favicon.png" type="image/x-icon" />
+
         {% if USE_OPEN_GRAPH %}
             {% if OPEN_GRAPH_FB_APP_ID %}
                 <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}" />
@@ -40,7 +43,7 @@
         {% endif %}
         {% block stylesheets %}
         
-        <link href='//fonts.googleapis.com/css?family=Lato|Oswald' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic|Lato:300,400,700,300italic,400italic,700italic|Oswald:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         
         <!--
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css">
@@ -56,6 +59,7 @@
         {% endassets %}
 
         {% endblock stylesheets %}
+
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
         {% endif %}
@@ -77,6 +81,8 @@
         {% include "footer.html" %}
 
         {% include "ga.html" %}
+        <script src="{{ SITEURL }}/theme/js/vendor/jquery.min.js"></script>
+        <script src="{{ SITEURL }}/theme/js/vendor/jquery.fitvids.min.js"></script>
         <script src="{{ SITEURL }}/theme/js/main.js"></script>
     </body>
 </html>

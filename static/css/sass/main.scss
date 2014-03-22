@@ -1,3 +1,5 @@
+@import "vars.scss";
+
 /*
  * HTML5 Boilerplate
  *
@@ -16,12 +18,31 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: $black;
 }
 
 body {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 1.08em;
+    line-height: 1.25;
+}
+
+h1, h2, h3, h4, h5 {
+    clear: both;
+    line-height: 1.25;
+}
+
+h1 {
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: 1.8em;
+    letter-spacing: 0.04em;
+}
+
+h2 {
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: 1.4em;
+    letter-spacing: 0.04em;
 }
 
 /*
@@ -31,11 +52,15 @@ body {
  */
 
 ::-moz-selection {
+    //background: $selection-hightlight-bgcolor;
+    //color: $selection-hightlight-color;
     background: #b3d4fc;
     text-shadow: none;
 }
 
 ::selection {
+    //background: $selection-hightlight-bgcolor;
+    //color: $selection-hightlight-color;
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -48,7 +73,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $gray;
     margin: 1em 0;
     padding: 0;
 }
@@ -93,15 +118,18 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-@import "vars.scss";
 
-#site-info{
+#site-info {
     margin-top: 1.5em;
-    font-size: 0.7em;
+    margin-left: 23%;
+    font-size: 0.9em;
     text-align: center;
-    color: $accent1;
-    a{
-        color: $white;
+    max-width: 800px;
+
+    color: $dark-gray;
+
+    a {
+        color: $red;
     }
 }
 
