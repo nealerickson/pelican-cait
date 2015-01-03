@@ -1,4 +1,4 @@
-$white: #eeeeee;
+$white: #ffffff;
 $black: #272822;
 
 $light-gray: #E0D4D5;
@@ -12,9 +12,11 @@ $light-green: #adc86e;
 $teal: #38C5C5;
 
 $dark-red: #62090F;
+$light-red: #772D34;
 $red: #971b24;
 
-$prebg: $light-gray;
+$code-bg-color: #eee;
+$code-border-color: #bbb;
 
 $sidebar-bg-color: $dark-red;
 $sidebar-link-color: $brown;
@@ -26,9 +28,20 @@ $primary-color: $teal;
 $selection-hightlight-color: $white;
 $selection-hightlight-bgcolor: $red;
 
-$font1: 'Lato', sans-serif;
-$secondary-font: 'Oswald', sans-serif;
-$font3: 'Ubuntu Mono', 'Inconsolata', monospace;
+$font1: 'pt-sans',Verdana,Helvetica,Arial,Times,sans-serif;
+$secondary-font: 'pt-sans',Verdana,Helvetica,Arial,Times,sans-serif;
+
+$font3: 'ubuntu-mono', monospace;
+
+$body-font: 'pt-sans',Verdana,Helvetica,Arial,Times,sans-serif;
+$headline-font: 'pt-sans',Verdana,Helvetica,Arial,Times,sans-serif;
+
+$strong-font: $headline-font;
+$italic-font: 'pt-sans-i4',Verdana,Helvetica,Arial,Times,sans-serif;
+
+$strong-italic-font: 'pt-sans-i7',Verdana,Helvetica,Arial,Times,sans-serif;
+
+$monospace-font: 'source-code-pro', 'Ubuntu Mono', monospace;
 
 @mixin transition {
     -webkit-transition: all 0.3s;
@@ -39,7 +52,31 @@ $font3: 'Ubuntu Mono', 'Inconsolata', monospace;
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin strong-font-of-size($size: 1.0em) {
+	font-family: $strong-font;
+	font-weight: normal;
+	font-size: $size;
+}
+
+@mixin italic-font-of-size($size: 1.0em) {
+	font-family: $italic-font;
+	font-weight: normal;
+	font-size: $size;
+}
+
+@mixin headline-font-of-size($size: 1.4em) {
+	font-family: $headline-font;
+	font-weight: normal;
+	font-size: $size;
+}
+
+@mixin body-font-of-size($size: 1.0em) {
+	font-family: $body-font;
+	font-weight: normal;
+	font-size: $size;
 }

@@ -17,6 +17,7 @@
                         {% else %}
                         <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
                         {% endif %}
+                        <p>
                         <time class="post-time" datetime="{{ article.date.isoformat() }}" pubdate>
                             {{ article.date|strftime('%B, %d %Y') }}
                         </time>
@@ -27,7 +28,7 @@
                         {#
                         <span class="mmdtext"> &bull; <a href="{{ SITEURL }}/{{ article.slug }}.txt" title="Raw Markdown for {{ article.title|striptags }}">[mmd]</a></span>
                         #}
-                        
+                        </p>                        
                     </header>
                     <section class="post-content">
                         {{ article.content }}

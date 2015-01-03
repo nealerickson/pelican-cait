@@ -2,6 +2,6 @@
 {% block title %}{{ SITENAME }} - {{ category }}{% endblock %}
 {% block content_title %}
 <div class="page-title">
-	<h2>Posts in <span>"{{ category }}" category</span></h2>
+	<h1><a href="{{ SITEURL }}/{{ category.url }}">Posts in <span>"{{ category }}" category</span></a></h1>
 </div>
 {% endblock %}

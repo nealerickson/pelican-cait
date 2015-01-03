@@ -1,3 +1,5 @@
+@import "vars.scss";
+
 /*
  * HTML5 Boilerplate
  *
@@ -16,12 +18,40 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: $black;
 }
 
-body {
-    font-size: 1em;
-    line-height: 1.4;
+html, body {
+    //font-size: 1.08em;
+        
+    
+
+    line-height: 1.25;
+    letter-spacing: 0.018em;
+}
+
+h1, h2, h3, h4, h5 {
+    clear: both;
+    line-height: 1.25;
+    font-family: $headline-font;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.675em;
+}
+
+h3 {
+    font-size: 1.4em;
+    //letter-spacing: 0.04em;
+}
+
+h4, h5 {
+    //font-weight: 600;
 }
 
 /*
@@ -31,11 +61,15 @@ body {
  */
 
 ::-moz-selection {
+    //background: $selection-hightlight-bgcolor;
+    //color: $selection-hightlight-color;
     background: #b3d4fc;
     text-shadow: none;
 }
 
 ::selection {
+    //background: $selection-hightlight-bgcolor;
+    //color: $selection-hightlight-color;
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -48,9 +82,17 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $gray;
     margin: 1em 0;
     padding: 0;
+}
+
+strong {
+    font-family: 'PTSansPro-Demi';
+    em {
+        font-family: 'PTSansPro-DemiItalic';
+        font-style: normal;
+    }
 }
 
 /*
@@ -93,35 +135,31 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-@import "vars.scss";
-
-blockquote {
-    margin: 0 18px 18px 18px;
-    color: $dark-gray;
-    padding-left: 10px;
-    border-left: 4px solid $light-gray;
-}
 
 #site-info {
     margin-top: 1.5em;
+    margin-left: 23%;
     font-size: 0.9em;
     text-align: center;
+    max-width: 800px;
+
     color: $dark-gray;
-    a{
+
+    a {
         color: $red;
     }
 }
 
-.side-shadow {
-    -webkit-box-shadow: 3px 0px 8px 0px $gray;
-       -moz-box-shadow: 3px 0px 8px 0px $gray;
-            box-shadow: 3px 0px 8px 0px $gray;
-}
+/*.side-shadow {
+    -webkit-box-shadow: 3px 0px 8px 0px $light-gray;
+       -moz-box-shadow: 3px 0px 8px 0px $light-gray;
+            box-shadow: 3px 0px 8px 0px $light-gray;
+}*/
 
 .angle-shadow {
-    -webkit-box-shadow: 6px 6px 8px 3px $gray;
-       -moz-box-shadow: 6px 6px 8px 3px $gray;
-            box-shadow: 6px 6px 8px 3px $gray;
+    -webkit-box-shadow: 6px 6px 8px 3px $light-gray;
+       -moz-box-shadow: 6px 6px 8px 3px $light-gray;
+            box-shadow: 6px 6px 8px 3px $light-gray;
 }
 
 

@@ -1,10 +1,90 @@
 @import "vars.scss";
 
-body {
+html, body {
     color: $black;
     background-color: $white;
-    font-family: $font1;
+    font-family: $body-font;
+    font-size: 1.04em;
+    line-height: 1.2;
 }
+
+h1, h2, h3, h4, h5 {
+    clear: both;
+    line-height: 1.25;
+    font-family: $headline-font;
+    font-weight: 400;
+    margin-bottom:0;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.675em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4, h5 {}
+
+p, pre {
+    margin: 0.83em 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $gray;
+    margin: 1em 0;
+    padding: 0;
+}
+
+em {
+    font-family: $italic-font;
+    font-style: normal;
+
+    strong {
+        font-family: $strong-italic-font;
+        font-style: normal;
+    }
+}
+
+strong {
+    font-family: $strong-font;
+    font-weight: normal;
+    em {
+        font-family: $strong-italic-font;
+        font-style: normal;
+    }
+}
+
+code {
+    font-size: 0.8em;
+    line-height: 1.4;
+    font-family: $monospace-font;
+    background-color: $code-bg-color;
+    border: 1px solid $code-border-color;
+
+
+    padding: 0;
+    margin: 0;
+    border-radius: 3px;
+    max-width: 100%;
+    display: inline-block;
+    overflow: auto;
+    vertical-align: middle;
+    
+}
+
+code:before, code:after {
+    content: "\00a0";
+    letter-spacing: -0.2em;
+}
+
 
 #wrapper a {
     color: $red;
@@ -14,9 +94,7 @@ body {
     }
 }
 
-#sidebar {
-    /*background: url('../img/stressed_linen/stressed_linen.png') repeat;*/
-    
+#sidebar {    
     background-color: $sidebar-bg-color;
 
     position: fixed;
@@ -37,17 +115,16 @@ body {
 }
 
 #site-title {
-    //line-height: 1.3em;
     padding-left: 6px;
-    font-family: $secondary-font;
+    font-family: $headline-font;
     font-size: 1.4em;
     font-weight: 400;
-    margin: 0.67em 0;
+    margin: 0.97em 0;
     letter-spacing: 0.06em;
 
     a {
         color: $white;
-        font-family: $secondary-font;
+        font-family: $headline-font;
         font-size: 1.2em;
         font-weight: 400;
         @include transition;
@@ -58,12 +135,23 @@ body {
 
 #site-desc {
     display:block;
-    font-size: .8em;
+    font-size: 0.825em;
     padding: 0 6px;
-
+    line-height: 1.25;
+    
     a {
         color: $sidebar-link-color;
-        /*border-bottom:1px solid #adc86e;*/
+    }
+}
+
+.entry-header, .page-title {
+    h1, h2 {
+        color: $red;
+    }
+}
+.page-title {
+    h1, h2 {
+        font-size: 1.4em;
     }
 }
 
@@ -73,6 +161,8 @@ body {
     max-width: 800px;
     min-height: 900px;
     overflow-wrap: break-word;
+
+    padding: 0 15px 0 0;
 
     sup {
         top: -0.2em;
@@ -84,7 +174,7 @@ body {
             color: $white;
             background-color: $gray;
             border-radius: 50%;
-            padding: 0.2em 0.6em 0.2em;
+            padding: 0.2em 0.5em 0.2em;
             text-decoration: none;
             border-bottom:none;
         }
@@ -102,13 +192,17 @@ body {
 
     .page-title {
         padding: 0 0 0 40px;
+
+        a {
+            text-decoration: none;
+        }
     }
 }
 
 #nav-links {
     list-style: none;
     padding: 0 0 0 6px;
-    font-family: $secondary-font;
+    font-family: $headline-font;
     font-size: 1.1em;
     font-variant: bold;
 
@@ -121,41 +215,68 @@ body {
         padding: 0;
         display: inline-block;
 
-        //border-radius: 12px;
-        //border: 3px solid $white;
-
         color: $sidebar-link-color;
-
-        border-top: 1px dotted $sidebar-bg-color;
-        border-bottom: 1px solid $sidebar-bg-color;
         
         line-height: 1.5em;
         @include transition;
         text-decoration: none;
+    }
+}
 
-        &:visted {
-            color: $white;
-        }
+html.no-touch {
+
+    #nav-links a {
+        border-top: 1px dotted $sidebar-bg-color;
+        border-bottom: 1px solid $sidebar-bg-color;
+
         &:hover {
-            //color: $sidebar-link-color;
-            //border-color: $sidebar-link-color;
-
             border-top: 1px dotted $sidebar-link-color;
             border-bottom: 1px dotted $sidebar-link-color;
         }
     }
 }
 
-#post-list {
+#post-list, #neighbor-list {
     list-style: none;
+}
+
+#neighbor-list {
+    min-height: 1.5em;
+    margin-bottom: 40px;
+
+    li {
+        width: 45%;
+
+        &.previous {
+            float: left;
+            text-align:left;
+        }
+        &.next {
+            float: right;
+            text-align:right;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 0.875em;
+        }
+    }
+
+
 }
 
 .post-entry {
     margin: 3em 0;
-    line-height: 1.6em;
+    line-height: 1.6;
 }
 
 .entry-header {    
+
+    p {
+        margin:0;
+        color: $light-red;
+        font-size: 1em;
+    }
     a {
         color: $black;
         text-decoration: none;
@@ -165,13 +286,11 @@ body {
         text-decoration: none;
     }
     h1, h2 {
-        margin: 0.5em 0;
-        font-family: $secondary-font;
-        font-weight: 400;
-        letter-spacing: 0.04em;
+        margin: 0;
     }
+
     time, .mmdtext {
-        font-size: 0.9em;
+        //line-height: 1;
     }
     time {
         color: $gray;
@@ -187,10 +306,9 @@ body {
     .permalink {
         display: inline-block;
         color: $red;
-        font-size: 1.6em;
-        vertical-align: top;
-        span {
 
+        .symbol {
+            font-family: Verdana,Helvetica,Arial,Times,sans-serif;
         }
     }
 }
@@ -204,17 +322,16 @@ body {
         margin: 0 auto;
         max-width: 80%;
     }
-    blockquote {
-        font-style: italic;
-    }
     pre {
-        font-size: 13px;
-        line-height: 18px;
-        background-color: $prebg;
+        font-size: 0.8em;
+        line-height: 1.4;
+        background-color: $code-bg-color;
         padding: 10px;
         margin: 10px;
         overflow: auto;
-        font-family: $font3;
+        font-family: $monospace-font;
+        border: 1px solid $code-border-color;
+        border-radius: 3px;
     }
 }
 
@@ -235,6 +352,7 @@ body {
 }
 
 .footnote {
+    font-size: 14px;
     .footnote-backref {
         text-decoration: none;
     }
@@ -243,23 +361,33 @@ body {
 .paginator {
     text-align: center;
     padding: 12px;
-    font-size: 1.4em;
-    font-family: $secondary-font;
-    font-weight: 400;
-    a {
-        color: $black;
-        text-decoration: none;
-        &:hover{
-            color: $accent1;
-        }
-    }
+    font-size: 0.9em;
 }
+
+#post-container {
+   #post-list {
+        li .post-entry {
+            margin-bottom: 2.5em;
+        }
+       li:first-child {
+           .post-entry {
+                margin-top: 1.39em;
+           }
+       }
+        li:last-child {
+           .post-entry {
+                margin-top: 1.39em;
+           }
+       }
+   }
+}
+
 
 #site-desc-togger-wrapper {
     display:none;
 
     .spacer {
-        color: $gray;
+        color: $light-red;
         margin: 0 8px;
     }
 
@@ -325,13 +453,24 @@ body {
     }
 }
 
+#site-info {
+    margin-left: 23%;
+    max-width: 800px;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design..
    Theses examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 // iPad in portrait & landscape
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    /*.entry-header {
+        .permalink {
+            margin-top:-4px;
+        }
+    }*/
+}
 
 // iPad in landscape
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
@@ -364,11 +503,29 @@ body {
 */
 
 
+// iPhone 5 in portrait & landscape
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    /*.entry-header {
+        .permalink {
+            margin-top:-4px;
+            
+        }
+    }*/
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
+    /*.entry-header {
+        .permalink {
+            margin-top:-4px;
+        }
+    }*/
+}
+
 
 @media only screen and (max-width: 680px) {
     /* Style adjustments for viewports that meet the condition */
     body {
-        font-size: 0.875em;
+        font-size: 0.975em;
     }
 
     #sidebar {
@@ -397,11 +554,26 @@ body {
         width: 100%;
         position: static;
         margin: 0;
-        padding: 0px;
+        padding:0;
+    }
+
+    #post-container #post-list li:first-child .post-entry {
+        margin-top: 2em;
     }
 
     #post-list {
         padding: 0;
+    }
+
+    #neighbor-list {
+        width: 95%;
+        margin: 0 auto 40px auto;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
     }
 
     #nav-links {
@@ -409,10 +581,11 @@ body {
         padding: 0;
         margin-top: 0;
         margin-bottom: 0;
-        //font-size: 1.1em;
+        font-size: 0.9em;
+
         li {
             display: inline;
-            margin: 6px 8px 6px;
+            margin: 6px;
         }
         a {
             display: inline-block;
@@ -433,7 +606,7 @@ body {
 
     #site-desc {
         text-align:center;
-        font-size: 1.0em;
+        font-size: 0.9em;
         padding: 0 6px;
         max-width: 450px;
         margin: 0 auto;
@@ -471,18 +644,11 @@ body {
     }
     #site-desc {
         font-size: 0.8em;
+    }
+
+    #toggle-site-desc { 
+    }
+
+    #site-info {
     }*/
-    #site-title {
-        text-align:center;
-        //font-size: 1.3em;
-        margin: 0.1em 0px;
-    }
-
-    #toggle-site-desc {
-        //font-size: 0.8em;
-    }
-
-    #site-info{
-        //font-size: 0.6em;
-    }
 }

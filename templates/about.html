@@ -1,7 +1,8 @@
-{% extends "index.html" %}
+{% extends "page.html" %}
 {% block title %}{{ tag }} - {{ SITENAME }}{% endblock %}
+
 {% block content_title %}
 <div class="page-title">
-	<h1>Posted tagged <span>"{{ tag }}"</span></h1>
+	<h1><a href="">Posted tagged <span>"{{ tag }}"</span></a></h1>
 </div>
 {% endblock %}

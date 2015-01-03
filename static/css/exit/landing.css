@@ -7,12 +7,12 @@ body {
   padding: 12px;
   /* margin: 5% auto; */
   color: white;
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Light", Verdana, Helvetica, Arial, Times, sans-serif;
   font-size: 1.2em;
   /* border-bottom: 2px solid $accent1; */ }
 
 #intro-header {
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
   text-align: center; }
   #intro-header h1 {
     font-size: 3.5em;
@@ -38,7 +38,7 @@ body {
     text-shadow: 0 0 12px #a8a1a2; }
 
 #nav-links {
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
   font-size: 1.8em; }
   #nav-links a {
     margin: 0 6px;

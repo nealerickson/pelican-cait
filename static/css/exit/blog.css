@@ -1,16 +1,15 @@
 html, body {
   color: #272822;
   background-color: white;
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Light", Verdana, Helvetica, Arial, Times, sans-serif;
   font-size: 1.04em;
   line-height: 1.2; }
 
 h1, h2, h3, h4, h5 {
   clear: both;
   line-height: 1.25;
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
-  font-weight: 400;
-  margin-bottom: 0; }
+  font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-weight: 400; }
 
 h1 {
   font-size: 1.8em; }
@@ -21,9 +20,6 @@ h2 {
 h3 {
   font-size: 1.4em; }
 
-p, pre {
-  margin: 0.83em 0; }
-
 hr {
   display: block;
   height: 1px;
@@ -33,36 +29,15 @@ hr {
   padding: 0; }
 
 em {
-  font-family: "pt-sans-i4", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-LightItalic", Verdana, Helvetica, Arial, Times, sans-serif;
   font-style: normal; }
-  em strong {
-    font-family: "pt-sans-i7", Verdana, Helvetica, Arial, Times, sans-serif;
-    font-style: normal; }
 
 strong {
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
   font-weight: normal; }
   strong em {
-    font-family: "pt-sans-i7", Verdana, Helvetica, Arial, Times, sans-serif;
+    font-family: "PTSansPro-DemiItalic", Verdana, Helvetica, Arial, Times, sans-serif;
     font-style: normal; }
-
-code {
-  font-size: 0.8em;
-  line-height: 1.4;
-  font-family: "source-code-pro", "Ubuntu Mono", monospace;
-  background-color: #eeeeee;
-  border: 1px solid #bbbbbb;
-  padding: 0;
-  margin: 0;
-  border-radius: 3px;
-  max-width: 100%;
-  display: inline-block;
-  overflow: auto;
-  vertical-align: middle; }
-
-code:before, code:after {
-  content: "\00a0";
-  letter-spacing: -0.2em; }
 
 #wrapper a {
   color: #971b24; }
@@ -88,14 +63,14 @@ code:before, code:after {
 
 #site-title {
   padding-left: 6px;
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
   font-size: 1.4em;
   font-weight: 400;
   margin: 0.97em 0;
   letter-spacing: 0.06em; }
   #site-title a {
     color: white;
-    font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+    font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
     font-size: 1.2em;
     font-weight: 400;
     -webkit-transition: all 0.3s;
@@ -108,16 +83,12 @@ code:before, code:after {
 #site-desc {
   display: block;
   font-size: 0.825em;
-  padding: 0 6px;
-  line-height: 1.25; }
+  padding: 0 6px; }
   #site-desc a {
     color: #cd9870; }
 
 .entry-header h1, .entry-header h2, .page-title h1, .page-title h2 {
   color: #971b24; }
-
-.page-title h1, .page-title h2 {
-  font-size: 1.4em; }
 
 #post-container {
   position: relative;
@@ -153,7 +124,7 @@ code:before, code:after {
 #nav-links {
   list-style: none;
   padding: 0 0 0 6px;
-  font-family: "pt-sans", Verdana, Helvetica, Arial, Times, sans-serif;
+  font-family: "PTSansPro-Demi", Verdana, Helvetica, Arial, Times, sans-serif;
   font-size: 1.1em;
   font-variant: bold; }
   #nav-links li {
@@ -211,7 +182,7 @@ html.no-touch #nav-links a {
   color: #272822;
   text-decoration: none; }
 .entry-header h1, .entry-header h2 {
-  margin: 0; }
+  margin: 0 0 0.3em; }
 .entry-header time {
   color: #a8a1a2; }
 .entry-header .mmdtext {
@@ -231,15 +202,13 @@ html.no-touch #nav-links a {
   margin: 0 auto;
   max-width: 80%; }
 .post-content pre {
-  font-size: 0.8em;
-  line-height: 1.4;
-  background-color: #eeeeee;
+  font-size: 13px;
+  line-height: 18px;
+  background-color: #e0d4d5;
   padding: 10px;
   margin: 10px;
   overflow: auto;
-  font-family: "source-code-pro", "Ubuntu Mono", monospace;
-  border: 1px solid #bbbbbb;
-  border-radius: 3px; }
+  font-family: "SourceCodePro-Regular", "Ubuntu Mono", "Inconsolata", monospace; }
 
 .post-meta a {
   font-style: italic;
@@ -317,10 +286,6 @@ html.no-touch #nav-links a {
     color: #ff7400;
     background: #fff; }
 
-#site-info {
-  margin-left: 23%;
-  max-width: 800px; }
-
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design..
    Theses examples override the primary ('mobile first') styles.
@@ -383,7 +348,7 @@ html.no-touch #nav-links a {
     padding: 0; }
 
   #post-container #post-list li:first-child .post-entry {
-    margin-top: 2em; }
+    margin-top: 2.75em; }
 
   #post-list {
     padding: 0; }
